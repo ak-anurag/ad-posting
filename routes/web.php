@@ -19,6 +19,8 @@ Route::get('post', 'PostAdController@showPage')->name('postad');
 Route::post('post', 'PostAdController@store');
 Route::get('/post-image', 'PostAdController@showImagePage')->name('post.image');
 Route::post('/post-image', 'PostAdController@storeImage');
+Route::get('/adlist', 'AdListController@show')->name('show_adlist');
+Route::post('/adlist', 'AdListController@showFiltered')->name('show_adlist');
 
 Auth::routes();
 

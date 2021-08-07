@@ -36,12 +36,18 @@
 
     <link rel="stylesheet" type="text/css" href="assets/css/colors/red.css" media="screen" />
 
+    <style>
+        .search-container{
+            padding: 20px;
+        }
+    </style>
+    
     @yield('stylesheet')
 </head>
 
 <body>
 
-    @if (Route::currentRouteName() != 'index')
+    @if (Route::currentRouteName() != 'index' && Route::currentRouteName() != 'show_adlist')
         <div class="header">
             @include('_component._header')
         </div>
