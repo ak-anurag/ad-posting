@@ -66,16 +66,6 @@
                                                 <img src="{{ asset($item->image) }}" alt="photo" >
                                             </div>
                                         </div>
-                                        <div class="col-12 col-md-4">
-                                            <div class="img-box">
-                                                <img src="{{ asset($item->image) }}" alt="photo" >
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-4">
-                                            <div class="img-box">
-                                                <img src="{{ asset($item->image) }}" alt="photo" >
-                                            </div>
-                                        </div>
                                     @endforeach
                                 </div>
                             </div>

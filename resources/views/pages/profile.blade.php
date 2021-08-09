@@ -91,10 +91,10 @@
                                     @foreach (Auth::user()->posts as $item)
                                         <div class="job-list">
                                             <div class="thumb">
-                                                <a href="job-details.html"><img src="{{ count($item->images) !== 0 ? $item->images[0]->image : '' }}" alt=""></a>
+                                                <a href="{{ route('adlist.detail', ['category' => $item->category, 'post_id' => $item->id, 'slug' => Str::slug($item->title)]) }}"><img src="{{ count($item->images) !== 0 ? $item->images[0]->image : '' }}" alt=""></a>
                                             </div>
                                             <div class="job-list-content">
-                                                <h4><a href="job-details.html">{{ ucfirst($item->title) }}</a><span
+                                                <h4><a href="{{ route('adlist.detail', ['category' => $item->category, 'post_id' => $item->id, 'slug' => Str::slug($item->title)]) }}">{{ ucfirst($item->title) }}</a><span
                                                         class="full-time">Full-Time</span></h4>
                                                 <p>
                                                     {{ ucfirst($item->description) }}
