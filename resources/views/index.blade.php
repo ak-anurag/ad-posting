@@ -16,64 +16,7 @@
         <section id="intro-bg">
             @include('_component._header')
 
-            <div class="search-container">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="content">
-                                <form method="">
-                                    <div class="row">
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text"
-                                                    placeholder="search">
-                                                <i class="ti-time"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-4 col-sm-6">
-                                            <div class="form-group">
-                                                <input class="form-control" type="email"
-                                                    placeholder="city / province / zip code">
-                                                <i class="ti-location-pin"></i>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-sm-6">
-                                            <div class="search-category-container">
-                                                <label class="styled-select">
-                                                    <select class="dropdown-product selectpicker">
-                                                        <option>All Categories</option>
-                                                        <option>Finance</option>
-                                                        <option>IT & Engineering</option>
-                                                        <option>Education/Training</option>
-                                                        <option>Art/Design</option>
-                                                        <option>Sale/Markting</option>
-                                                        <option>Healthcare</option>
-                                                        <option>Science</option>
-                                                        <option>Food Services</option>
-                                                    </select>
-                                                </label>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-1 col-sm-6">
-                                            <button type="button" class="btn btn-search-icon"><i
-                                                    class="ti-search"></i></button>
-                                        </div>
-                                    </div>
-                                    {{-- <div class="row" style="margin-top: 20px;">
-                                        <div class="col-12 col-md-11 col-sm-6">
-                                            <div class="form-group">
-                                                <input class="form-control" type="text"
-                                                    placeholder="Search here">
-                                                <i class="ti-search"></i>
-                                            </div>
-                                        </div>
-                                    </div> --}}
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @include('_component._search_container')
         </section>
     </div>
 
@@ -112,7 +55,7 @@
                             <span><i class="ti-calendar"></i> 4 months ago</span>
                             <span><i class="ti-time"></i> Full Time</span>
                             <div class="view-iocn">
-                                <a href="job-page.html"><i class="ti-arrow-right"></i></a>
+                                <a href="{{ route('adlist.category', ['category' => 'callgirl']) }}"><i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -136,7 +79,7 @@
                             <span><i class="ti-calendar"></i> 5 months ago</span>
                             <span><i class="ti-time"></i> Part Time</span>
                             <div class="view-iocn">
-                                <a href="job-page.html"><i class="ti-arrow-right"></i></a>
+                                <a href="{{ route('adlist.category', ['category' => 'massages']) }}"><i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -160,7 +103,7 @@
                             <span><i class="ti-calendar"></i> 3 months ago</span>
                             <span><i class="ti-time"></i> Full Time</span>
                             <div class="view-iocn">
-                                <a href="job-page.html"><i class="ti-arrow-right"></i></a>
+                                <a href="{{ route('adlist.category', ['category' => 'male-escorts']) }}"><i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -184,7 +127,7 @@
                             <span><i class="ti-calendar"></i> 1 months ago</span>
                             <span><i class="ti-time"></i> Part Time</span>
                             <div class="view-iocn">
-                                <a href="job-page.html"><i class="ti-arrow-right"></i></a>
+                                <a href="{{ route('adlist.category', ['category' => 'transsexual']) }}"><i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -208,7 +151,7 @@
                             <span><i class="ti-calendar"></i> 6 months ago</span>
                             <span><i class="ti-time"></i> Full Time</span>
                             <div class="view-iocn">
-                                <a href="job-page.html"><i class="ti-arrow-right"></i></a>
+                                <a href="{{ route('adlist.category', ['category' => 'adult-meetings']) }}"><i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

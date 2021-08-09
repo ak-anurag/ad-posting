@@ -25,8 +25,13 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right float-right">
                     <li class="left"><a href="{{ route('postad') }}"><i class="ti-pencil-alt"></i> Post Ad</a></li>
-                    <li class="right"><a href="{{ route('login') }}"><i class="ti-lock"></i> Log In</a></li>
-                    <li class="right"><a href="{{ route('register') }}"><i class="ti-lock"></i>Register</a></li>
+                    @auth
+                        <li class="right"><a href="{{ route('home') }}"><i class="ti-user"></i> Profile</a></li>
+                    @endauth
+                    @guest
+                        <li class="right"><a href="{{ route('login') }}"><i class="ti-lock"></i> Log In</a></li>
+                        <li class="right"><a href="{{ route('register') }}"><i class="ti-lock"></i>Register</a></li>
+                    @endguest
                 </ul>
             </div>
         </div>
