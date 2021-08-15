@@ -16,6 +16,8 @@
 @section('content')
 
     <div class="container">
+        @include('_component._search_container')
+
         @if (Session::has('success'))
                 <div class="alert alert-success">
                     <strong>
@@ -37,13 +39,13 @@
                     <listing-items class="clearfix mb-4">
                         <div class="row">
                             <div class="col-md-2 col-5">
-                                <a href="{{ route('adlist.detail', ['category' => $item->category, 'post_id' => $item->id, 'slug' => Str::slug($item->title)]) }}">
+                                <a href="{{ route('adlist.detail', ['post_id' => $item->id, 'slug' => Str::slug($item->title)]) }}">
                                     <img src="{{ count($item->images) !== 0 ? $item->images[0]->image : '' }}" alt="profile" class="img-fluid">
                                 </a>
                             </div>
                             <div class="col-md-10 col-7">
                                 <div class="title">
-                                    <a href="{{ route('adlist.detail', ['category' => $item->category, 'post_id' => $item->id, 'slug' => Str::slug($item->title)]) }}"> {{ $item->title }} </a>
+                                    <a href="{{ route('adlist.detail', ['post_id' => $item->id, 'slug' => Str::slug($item->title)]) }}"> {{ $item->title }} </a>
                                 </div>
                                 <div class="overflow">
                                     <p>
@@ -64,6 +66,7 @@
             </div>
             <div class="col-md-3 sidebar">
                 <div class="make-sticky">
+                    <p>Name: {{ ucfirst(Auth::user()->name) }}</p>
                     <p>Ad Count: {{ Auth::user()->posts->count() }}</p>
                     <p>Email: {{ Auth::user()->email }}</p>
                 </div>

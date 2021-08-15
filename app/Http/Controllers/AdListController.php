@@ -50,24 +50,25 @@ class AdListController extends Controller
         return view('pages.adlist_page')->with('posts', $post);
     }
 
+    //show ad city wise
+    public function showCityWise(Request $request){
+        $request->validate([
+            'city' => ['required', 'string'],
+        ]);
+
+        $post = PostAd::where('city', $request->city)->get();
+        return view('pages.adlist_page')->with('posts', $post);
+    }
+
     //show ad details
     public function showAdDetail(Request $request){
-        // return var_dump($request->post_id);
-        // $request->validate([
-        //     'post_id' => ['required'],
-        //     'category' => ['required'],
-        //     'slug' => ['required'],
-        // ]);
-
         $validator = Validator::make(
             [
                 'post_id' => $request->post_id,
-                'category' => $request->category,
                 'slug' => $request->slug,
             ],
             [
                 'post_id' => ['required', 'numeric'],
-                'category' => ['required'],
                 'slug' => ['required'],
             ]
         );

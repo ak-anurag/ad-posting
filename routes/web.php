@@ -21,7 +21,8 @@ Route::post('/post-image', 'PostAdController@storeImage');
 Route::get('/adlist', 'AdListController@show')->name('show_adlist');
 Route::post('/adlist', 'AdListController@showFiltered')->name('show_adlist');
 Route::get('/adlist/category', 'AdListController@showCategoryWise')->name('adlist.category');
-Route::get('/ad/{category}/{post_id}/{slug}', 'AdListController@showAdDetail')->name('adlist.detail');
+Route::get('/adlist/city', 'AdListController@showCityWise')->name('adlist.city');
+Route::get('/ad/{post_id}/{slug}', 'AdListController@showAdDetail')->name('adlist.detail');
 
 Auth::routes();
 
