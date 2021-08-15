@@ -6,6 +6,7 @@
             border: 1px solid red;
         }
         .page-ads, .wrapper{
+            padding: 8px 10px;
             background-color: rgb(247, 247, 247);
         }
         .form-control{
@@ -15,6 +16,7 @@
         .image-btn{
             width: 200px;
             height: 40px;
+            line-height: 40px;
             text-align: center;
             position: relative;
             border-radius: 4px;
@@ -22,12 +24,10 @@
             font-family: sans-serif;
             font-size: 16px;
             color: #fff;
+            cursor: pointer;
         }
-        .image-btn span{
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
+        input[type="file"]{
+            opacity: 0;
         }
     </style>
 @endsection
@@ -60,10 +60,10 @@
                                     <input type="hidden" value="{{ Crypt::decrypt(app('request')->input('post_id')) }}" name="post_id">
                                     <div class="input-group" style="margin-bottom: 30px;">
                                         <div class="input-group-prepend">
-                                            <div class="image-btn">
+                                            <label class="image-btn">
+                                                Select Image
                                                 <input type="file" name="image[]" class="form-control" multiple>
-                                                <span>Select Image</span>
-                                            </div>
+                                            </label>
                                         </div>
                                     </div> 
                                     <button type="submit" class="btn btn-success">Submit</button>
