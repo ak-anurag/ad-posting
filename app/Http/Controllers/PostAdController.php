@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Images;
 use App\Models\PostAd;
 use Illuminate\Http\Request;
@@ -14,7 +15,14 @@ class PostAdController extends Controller
     }
     //show post ad page
     public function showPage(){
-        return view('pages.post_ad');
+        $cities = City::select('name')->get();
+        $cityList = array();
+        foreach($cities as $item){
+            array_push($cityList, $item->name);
+        }
+
+        sort($cityList);
+        return view('pages.post_ad')->with('cities', $cityList);
     }
 
     // store ad details 

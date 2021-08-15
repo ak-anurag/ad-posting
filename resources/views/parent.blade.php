@@ -1,83 +1,34 @@
+<?php
+$title = 'Welcome to LOANERR';
+$description = '';
+$keywords = '';
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="author" content="Jobboard">
-    <title>Add Listing Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#FE7E22" />
+    <title><?php echo $title; ?></title>
 
-    <link rel="shortcut icon" href="assets/img/favicon.png">
-
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/css/jasny-bootstrap.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/css/bootstrap-select.min.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/css/material-kit.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/fonts/font-awesome.min.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/fonts/themify-icons.css')}}">
-
-    <link rel="stylesheet" href="{{asset('assets/css/color-switcher.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/extras/animate.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/extras/owl.carousel.css')}}" type="text/css">
-    <link rel="stylesheet" href="{{asset('assets/extras/owl.theme.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/extras/settings.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/css/slicknav.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}" type="text/css">
-
-    <link rel="stylesheet" href="{{asset('assets/css/responsive.css')}}" type="text/css">
-
-    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/colors/red.css')}}" media="screen" />
-
-    <style>
-        .search-container{
-            padding: 20px;
-        }
-    </style>
-    
+    <link rel="shortcut icon" type="image/x-icon" href="assets/favicon.ico" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{asset('assets/style.css')}}" type="text/css" media="all" />
     @yield('stylesheet')
 </head>
 
 <body>
-
-    @php
-        $currentRoute = Route::currentRouteName();
-    @endphp
-    @if ($currentRoute != 'index' && $currentRoute != 'show_adlist' && $currentRoute != 'adlist.category')
-        <div class="header">
-            @include('_component._header')
+    <section class="main">
+        @include('_component._header')
+        
+        <div class="container">
+            @yield('content')
         </div>
-    @endif
-
-    @yield('content')
-
-    @include('_component._footer')
-
-    <script type="text/javascript" src="{{asset('assets/js/jquery-min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/material.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/material-kit.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/color-switcher.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jquery.parallax.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jquery.slicknav.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/main.js')}}"></script>
-    <script type="text/javascript" src="{{asset("assets/js/jquery.counterup.min.js")}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/waypoints.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jasny-bootstrap.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/form-validator.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/contact-form-script.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jquery.themepunch.revolution.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('assets/js/jquery.themepunch.tools.min.js')}}"></script>
-
+        
+        @include('_component._footer')
+    </section>
+    <script type="text/javascript" src="{{asset('assets/scripts.js')}}"></script>
     @yield('down_script')
 </body>
+
 </html>
