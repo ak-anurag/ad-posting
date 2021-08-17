@@ -13,7 +13,6 @@
 @endsection
 
 @section('content')
-    <div class="container">
         @include('_component._search_container')
         
         <div class="hero">
@@ -127,6 +126,5 @@
                 </ul>
             </div>
         </div>
-    </div>
 @endsection
         

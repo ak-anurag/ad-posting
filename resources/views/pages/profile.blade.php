@@ -15,7 +15,6 @@
 
 @section('content')
 
-    <div class="container">
         @include('_component._search_container')
 
         @if (Session::has('success'))
@@ -73,5 +72,4 @@
             </div>
             <!---------->
         </div>
-    </div>
 @endsection

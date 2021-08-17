@@ -39,37 +39,35 @@
 @section('content')
 
     <section id="content">
-        <div class="container">
-            @if (Session::has('fail'))
-                <div class="alert alert-danger">
-                    {{ Session::get('fail') }}
-                </div>
-            @endif
+        @if (Session::has('fail'))
+            <div class="alert alert-danger">
+                {{ Session::get('fail') }}
+            </div>
+        @endif
 
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="page-ads box">
-                        <div class="wrapper"> 
-                            <form action="{{ route('post.image') }}" method="post" id="wizard" enctype="multipart/form-data">
-                                @csrf
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="page-ads box">
+                    <div class="wrapper"> 
+                        <form action="{{ route('post.image') }}" method="post" id="wizard" enctype="multipart/form-data">
+                            @csrf
 
-                                <section>
-                                    @foreach ($errors->all() as $item)
-                                        {{ $item }} <br>
-                                    @endforeach
-                                    <input type="hidden" value="{{ Crypt::decrypt(app('request')->input('post_id')) }}" name="post_id">
-                                    <div class="input-group" style="margin-bottom: 30px;">
-                                        <div class="input-group-prepend">
-                                            <label class="image-btn">
-                                                Select Image
-                                                <input type="file" name="image[]" class="form-control" multiple>
-                                            </label>
-                                        </div>
-                                    </div> 
-                                    <button type="submit" class="btn btn-success">Submit</button>
-                                </section>
-                            </form>
-                        </div>
+                            <section>
+                                @foreach ($errors->all() as $item)
+                                    {{ $item }} <br>
+                                @endforeach
+                                <input type="hidden" value="{{ Crypt::decrypt(app('request')->input('post_id')) }}" name="post_id">
+                                <div class="input-group" style="margin-bottom: 30px;">
+                                    <div class="input-group-prepend">
+                                        <label class="image-btn">
+                                            Select Image
+                                            <input type="file" name="image[]" class="form-control" multiple>
+                                        </label>
+                                    </div>
+                                </div> 
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </section>
+                        </form>
                     </div>
                 </div>
             </div>
