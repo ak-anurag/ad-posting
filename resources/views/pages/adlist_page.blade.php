@@ -43,7 +43,7 @@
                 </div>
                 <div class="col-md-10 col-7">
                     <div class="title">
-                        @if (Auth::user()->role == 1)
+                        @if (Auth::user() && Auth::user()->role == 1)
                             <div class="premium-tag">
                                 <span>Premium</span>
                             </div>
