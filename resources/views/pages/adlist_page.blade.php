@@ -33,7 +33,7 @@
 @section('content')
     @include('_component._search_container')
 
-    @foreach ($posts as $item)
+    @forelse ($posts as $item)
         <listing-items class="clearfix mb-5">
             <div class="row box-sh">
                 <div class="col-md-2 col-5">
@@ -65,7 +65,13 @@
                 </div>
             </div>
         </listing-items><br>
-    @endforeach
+    @empty
+        <div class="h-100">
+            <h1 class="text-center" style="font-size: 48px;">
+                No Post
+            </h1>
+        </div>
+    @endforelse
 
 @endsection
 

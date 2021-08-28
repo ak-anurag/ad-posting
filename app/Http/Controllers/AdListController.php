@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Validator;
 class AdListController extends Controller
 {
     public function show(){
-        $post = PostAd::get();
+        $post = PostAd::where(['is_blocked' => 0])->get();
         return view('pages.adlist_page')->with('posts', $post);
     }
 
@@ -23,7 +23,7 @@ class AdListController extends Controller
 
         $city = $request->city;
         $searchTerm = $request->search_term;
-        $post = PostAd::where('category', $request->category)
+        $post = PostAd::where(['category' => $request->category, 'is_blocked' => 0])
                       ->where(function($query) use ($city, $searchTerm){
                             if($city != '' && $searchTerm != ''){
                                 $query->where(['city' => $city, 'search_term' => $searchTerm]);
@@ -46,7 +46,7 @@ class AdListController extends Controller
             'category' => ['required', 'string'],
         ]);
 
-        $post = PostAd::where('category', $request->category)->get();
+        $post = PostAd::where(['category' => $request->category, 'is_blocked' => 0])->get();
         return view('pages.adlist_page')->with('posts', $post);
     }
 
@@ -56,7 +56,7 @@ class AdListController extends Controller
             'city' => ['required', 'string'],
         ]);
 
-        $post = PostAd::where('city', $request->city)->get();
+        $post = PostAd::where(['city' => $request->city, 'is_blocked' => 0])->get();
         return view('pages.adlist_page')->with('posts', $post);
     }
 

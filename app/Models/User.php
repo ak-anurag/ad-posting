@@ -46,4 +46,14 @@ class User extends Authenticatable
     public function posts(){
         return $this->hasMany(PostAd::class, 'user_id');
     }
+    
+    //get user isblock value
+    public static function isUserBlocked(string $email){
+        $user = self::select('is_blocked')->where('email', $email)->first();
+        if(isset($user)){
+            return $user->is_blocked == 1;
+        }
+        
+        return false;
+    }
 }

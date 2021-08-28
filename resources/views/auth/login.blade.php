@@ -3,6 +3,14 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-md-5">
+            @if (Session::has('fail'))
+                <div class="alert alert-danger">
+                    <strong>
+                        {{ Session::get('fail') }}
+                    </strong>
+                </div>
+            @endif
+
             <div class="login-box">
                 <h1 class="page-title"># Login</h1>
                 <form autocomplete="off" class="form" method="post" action="{{ route('login') }}">

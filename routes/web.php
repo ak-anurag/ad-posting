@@ -28,3 +28,18 @@ Auth::routes();
 
 Route::get('/profile', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/profile/delete/{post_id}', 'HomeController@deleteAd')->name('home.delete.post');
+
+
+Route::prefix('admin')->group(function () {
+	Route::get('/', 'AdminController@index')->name('admin.index');
+	Route::post('block', 'AdminController@blockUser')->name('admin.block.user');
+	Route::post('unblock', 'AdminController@unblockUser')->name('admin.unblock.user');
+	Route::get('posts', 'AdminController@getPostList')->name('admin.post');
+	Route::post('post/block', 'AdminController@blockPost')->name('admin.post.block');
+
+});
+
+Route::get('/test', function(){
+	putenv("APP_NAME=Street");
+	return var_dump(env('APP_NAME'));
+});
