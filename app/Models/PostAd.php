@@ -13,4 +13,9 @@ class PostAd extends Model
     public function images(){
         return $this->hasMany(Images::class, 'post_id');
     }
+
+    //connection with user
+    public function user(){
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

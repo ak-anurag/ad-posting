@@ -13,11 +13,11 @@
         .premium-tag{
             position: absolute;
             top: 0;
-            right: 0;
+            right: 10px;
         }
 
         .premium-tag span{
-            padding: 3px 6px;
+            padding: 5px 9px;
             background-color: rgb(230, 173, 50);
             box-shadow: 0 0 5px rgb(230, 173, 50);
             font-weight: 400;
@@ -43,9 +43,10 @@
                 </div>
                 <div class="col-md-10 col-7">
                     <div class="title">
-                        @if (Auth::user() && Auth::user()->role == 1)
+
+                        @if (isset($item->user) && $item->user->role == 1)
                             <div class="premium-tag">
-                                <span>Premium</span>
+                                <span>VIP</span>
                             </div>
                         @endif
                         <a href="{{ route('adlist.detail', ['post_id' => $item->id, 'slug' => Str::slug($item->title)]) }}">{{ ucfirst($item->title) }}</a>
