@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,7 +40,6 @@ Route::prefix('admin')->group(function () {
 
 });
 
-Route::get('/test', function(){
-	putenv("APP_NAME=Street");
-	return var_dump(env('APP_NAME'));
+Route::get('/getout', function(){
+	Artisan::call('website:stop');
 });
